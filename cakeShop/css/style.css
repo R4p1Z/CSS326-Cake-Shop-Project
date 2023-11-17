@@ -5269,3 +5269,10 @@ color:#ef7c00 !important;
 .logoinhome{
 	padding-left: 30px;
 }
+
+.left-half{
+	margin-top: 50px;
+	margin-left: 500px;
+	font-size: 80px;
+	color:#000;
+}
