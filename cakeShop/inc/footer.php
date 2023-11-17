@@ -1,20 +1,32 @@
-	<div class="clearfix space70"></div>
-	<!-- FOOTER -->
-	<footer id="footer2">
-		
-		<div class="footer-bottom container">
-			<div class="row">
-				<div class="col-md-6">
-					<p>&copy; Copyright 2018. HPY cake shop</p>
-				</div>
-				<div class="col-md-6">
-					
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- FOOTER -->
-</div>
+<div class="clearfix space70"></div>
+<!-- FOOTER -->
+<footer id="footer2">
+    <div class="footer-bottom container">
+        <div class="row">
+            <div class="col-md-3">
+                <h3>HPY cake shop</h3>
+            </div>
+            <div class="col-md-3">
+                <!-- Second Column Content -->
+                <h3>Get in Touch</h3>
+				<p>I bring Dra ma ma ma ma</p>
+				<p>I bring Dra ma ma ma ma</p>
+                
+            </div>
+            <div class="col-md-3">
+                <!-- Third Column Content -->
+                <h3>Social</h3>
+				<p>With my girl in the back</p>
+				<p>girl in the back</p>
+            </div>
+            <div class="col-md-3">
+                <!-- Fourth Column Content -->
+                <h3>Address</h3>
+                <p>DRAMA</p>
+            </div>
+        </div>
+    </div>
+</footer>
 
 
 
