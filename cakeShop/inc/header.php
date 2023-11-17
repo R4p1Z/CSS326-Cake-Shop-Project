@@ -16,7 +16,7 @@ if (!isset($_SESSION['cart'])) {
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Shop Home Page - PHP Ecommerce</title>
+	<title>HPY cake shop website</title>
 
 	<!-- Mobile Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
