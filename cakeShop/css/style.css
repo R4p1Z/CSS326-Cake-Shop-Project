@@ -4044,6 +4044,7 @@ transform:translateY(-50%);
 /* 6. ========== Footer Start Here ==========*/
 
 #footer {
+		float:left;
     width: 100%;
     text-align: center;
     padding: 28px 0px 25px;
@@ -4072,13 +4073,8 @@ transform:translateY(-50%);
 /* 6. ========== Footer End Here==========*/
 
 #footer2 {
-	width: 100%;
-	position: absolute;
-	bottom: 0;
 	background:#EF9595;
-	padding:40px 0 0px;
-	border-radius: 10px;
-	
+	padding: 75px 0 0px;
 }
 
 
@@ -4148,6 +4144,7 @@ transform:translateY(-50%);
 
 #footer2 h3 {
 	font-family: bebas-neue, sans-serif;
+	padding:0 0 15px;
 	color:#606060;
 	font-weight:300;
 }
