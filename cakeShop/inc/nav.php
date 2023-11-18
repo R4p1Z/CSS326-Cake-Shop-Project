@@ -27,7 +27,7 @@
 
 					<div class="mu-text">
 						<li>
-							<a href="#">Contact us</a>						
+							<a href="contact-us.php">Contact us</a>						
 						</li>
 					</div>
 
