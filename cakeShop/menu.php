@@ -9,12 +9,14 @@ include 'inc/header.php'; ?>
 		<div class="content-blog">
 			<div class="container">
 				<div class="row">
-					<div class="page_header text-center">
-						<h2>Shop</h2>
-						<p>You can order products from here</p>
+					<div class="page_header">
+    					<div style="float: left;">
+        					<h1>Menu</h1>
+							<p>Favorite</p>
+   						</div>
 					</div>
 						<div class="row">
-							<div id="shop-mason" class="shop-mason-4col">
+							<div id="shop-mason" class="shop-mason-3col">
 
 							<?php 
 								$sql = "SELECT * FROM products";
@@ -28,34 +30,37 @@ include 'inc/header.php'; ?>
 								while($r = mysqli_fetch_assoc($res)){
 							?>
 								<div class="sm-item isotope-item">
-									<div class="product">
-										<div class="product-thumb">
-											<img src="admin/<?php echo $r['thumb']; ?>" class="img-responsive" width="250px" alt="">
-											<div class="product-overlay">
-												<span>
-												<a href="single.php?id=<?php echo $r['id']; ?>" class="fa fa-link"></a>
-												<a href="single.php?id=<?php echo $r['id']; ?>" class="fa fa-shopping-cart"></a>
-													<!-- <a href="addtocart.php?id=<?php echo $r['id']; ?>" class="fa fa-shopping-cart"></a> -->
-												</span>					
-											</div>
-										</div>
-										<div class="rating">
-											<span class="fa fa-star act"></span>
-											<span class="fa fa-star act"></span>
-											<span class="fa fa-star act"></span>
-											<span class="fa fa-star act"></span>
-											<span class="fa fa-star act"></span>
-										</div>
-										<h2 class="product-title"><a href="single.php?id=<?php echo $r['id']; ?>"><?php echo $r['name']; ?></a></h2>
-										<div class="product-price">$ <?php echo $r['price']; ?>/<?php echo $r['unit']; ?><span></span></div>
-									</div>
+    								<div class="product">
+        								<div class="product-thumb">
+            								<div class="img-container">
+                								<img src="admin/<?php echo $r['thumb']; ?>" class="img-responsive" width="250px" alt="">
+            								</div>
+            								<div class="product-overlay">
+                								<span>
+                    								<a href="single.php?id=<?php echo $r['id']; ?>" class="fa fa-link"></a>
+                    								<a href="single.php?id=<?php echo $r['id']; ?>" class="fa fa-shopping-cart"></a>
+                								</span>                    
+            								</div>
+        								</div>
+        									<h2 class="product-title"><a href="single.php?id=<?php echo $r['id']; ?>"><?php echo $r['name']; ?></a></h2>
+        								<div class="product-price">$ <?php echo $r['price']; ?><span></span></div>
+    								</div>
 								</div>
+
 							<?php } ?>
 
 								
-							</div>
+							
 						</div>
-						<div class="clearfix"></div>					
+						<div class="clearfix"></div>
+
+						
+						
+						
+									
+				
+
+									
 				</div>
 			</div>
 		</div>

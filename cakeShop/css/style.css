@@ -1913,6 +1913,7 @@ article.bm-item h2.post-title {
 
 .page_header {
 	margin:10px 0 85px;
+	padding-left: 30px;
 }
 
 .page_header2 {
@@ -1929,9 +1930,12 @@ article.bm-item h2.post-title {
 
 .page_header p {
     margin-right: 15px;
+	margin-left: 30px;
+	padding-top: 15px;
+	padding-bottom: 30px;
     font-size: 16px;
     font-style: italic;
-    color: #ef7c00;
+    color: #A1C298;
     font-family: "Droid Serif",serif;
 }
 
@@ -1940,25 +1944,6 @@ blockquote.style2 p {
     font-size: 32px;
     line-height: 35px;
     font-style: italic;
-}
-
-.rating {
-    display: table;
-    margin: 0 auto;
-    background: #fff;
-    padding: 10px 15px;
-    border-radius: 5px;
-    margin: -19px auto 10px;
-    position: relative;
-    z-index: 11;
-}
-
-.rating span {
-	color:#ddd;
-}
-
-.rating span.act {
-	color:#eecf55;
 }
 
 .shop-mason-4col .sm-item {
@@ -1975,6 +1960,13 @@ blockquote.style2 p {
 	text-align:center;
 }
 
+.shop-3col .sm-item{
+	width:33.3333%;
+	padding:0 15px;
+	margin:0 0 65px;
+	text-align:center;
+}
+
 .product-title {
 	font-family: "Roboto Slab";
 	font-size:20px;
@@ -1983,11 +1975,11 @@ blockquote.style2 p {
 }
 
 .product-title a {
-color:#000;
+color:#606060;
 }
 
 .product-price {
-	color:#ef7c00;
+	color:#EF9595;
 	font-weight:700;
 }
 
@@ -2001,6 +1993,12 @@ color:#000;
 
 .product-thumb {
 	position:relative;
+	text-align: center;
+}
+
+.img-container {
+    display: inline-block;
+    position: relative;
 }
 
 .product-overlay {
@@ -2010,16 +2008,19 @@ color:#000;
     right: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,.7);
+    background: rgba(0,0,0,.5);
 	opacity:0;
 	visibility:hidden;
-	transition:.4s;
+	transition:.3s;
+	display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .product:hover .product-overlay {
 	opacity:1;
 	visibility:visible;
-	transition:.4s;
+	transition:.3s;
 }
 
 .product-overlay span {
@@ -2031,7 +2032,7 @@ right: 0;
 }
 
 .product-overlay span a {
-	background:#ef7c00;
+	background:#EF9595;
     width: 40px;
     height: 40px;
     line-height: 40px;
@@ -2046,7 +2047,7 @@ right: 0;
     width: 40px;
     height: 40px;
     line-height: 40px;
-    color: #ef7c00;
+    color: #EF9595;
     font-size: 18px;
 }
 
@@ -4043,7 +4044,6 @@ transform:translateY(-50%);
 /* 6. ========== Footer Start Here ==========*/
 
 #footer {
-    float: left;
     width: 100%;
     text-align: center;
     padding: 28px 0px 25px;
@@ -4072,12 +4072,18 @@ transform:translateY(-50%);
 /* 6. ========== Footer End Here==========*/
 
 #footer2 {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
 	background:#EF9595;
-	padding:75px 0 0px;
+	padding:40px 0 0px;
+	border-radius: 10px;
+	
 }
 
+
 #footer2 p {
-	color:#888;
+	color:#606060;
 }
 
 .tweets_txt {
@@ -4142,8 +4148,7 @@ transform:translateY(-50%);
 
 #footer2 h3 {
 	font-family: bebas-neue, sans-serif;
-	color:#fff;
-	padding:0 0 15px;
+	color:#606060;
 	font-weight:300;
 }
 
@@ -5270,15 +5275,4 @@ color:#ef7c00 !important;
 	padding-left: 30px;
 }
 
-.left-half{
-	margin-top: 50px;
-	margin-left: 500px;
-	font-size: 80px;
-	color:#000;
-}
 
-.right-half{
-	text-align: center;
-	font-size: 80px;
-	color:#000;
-}
