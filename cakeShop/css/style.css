@@ -2154,32 +2154,30 @@ right: 0;
 }
 
 .button {
-    background: #000;
+    background: #EF9595;
+	border-color: transparent;
     color: #fff;
     padding: 13px 25px;
     display: table;
-	border:2px solid #000;
     margin: 0 ;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 14px;
 	letter-spacing:0.5px;
-	border-radius:0px;
+	border-radius:20px;
 }
 
 .btn-bdr {
 	background:transparent;
-	border:2px solid #000;
-	color:#000;
 }
 
 .button.color {
-	border-color:#ef7c00;
-	background:#ef7c00;
+	border-color:#EF9595;
+	background:#EF9595;
 }
 
 .button.btn-bdr.color {
-	border-color:#ef7c00;
+	border-color:#EF9595;
 	background:transparent;
 	color:#ef7c00;
 }
@@ -2187,12 +2185,12 @@ right: 0;
 .button.lite {
 	border-color:#eee;
 	background:#eee;
-	color:#ef7c00;
+	color:#EF9595;
 }
 
 .button:hover {
-	background:#ef7c00;
-	border-color:#ef7c00;
+	background:#A1C298;
+	border-color:#A1C298;
 	color:#fff;
 }
 
@@ -4662,7 +4660,13 @@ color:#ef7c00;
 }
 
 .p-price {
-	font-size: 40px;
+	font-size: 25px;
+	color: #A1C298;
+	padding-bottom: 10px;
+}
+
+.dd23{
+	padding-top: 10px;
 }
 
 .product-size {
