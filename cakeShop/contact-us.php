@@ -9,27 +9,32 @@ include 'inc/header.php'; ?>
     <div class="content-blog">
       <div class="container">
         <div class="row">
-        <div class="page_header">
-          <h1>Contact Us</h1>
-        </div>
-          <!-- DO the column width:50% -->
-        <div class="left-half">
-          <h2>LINE ID:</h2>
-          <h2>X:</h2>
+
+            <div class="page_header">
+                <div style="float: left;">
+                    <h1>Contact us</h1>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div>
+                    <h2 class="cthalf">LINE ID:</h2>
+                    <h2 class="cthalf">Tiktok:</h2>
+                    <h2 class="cthalf">Facebook:</h2>
+                </div>
+
+            </div>
+                
+            <div class="col-md-6">
+                <div>
+                    <h2 class="cthalf">X:</h2>
+                    <h2 class="cthalf">Instagram:</h2>
+                    <h2 class="cthalf">Phone numbers:</h2>
+                </div>
+            </div>
         </div>
 
-        <div class="left-half">
-          <h2>Tiktok:</h2>
-        </div>
-        <div class="left-half">
-          <h2>Facebook:</h2>
-        </div>
-        <div class="right-half">
-          <h2>Instagram:</h2>
-        </div>
-        <div class="right-half">
-          <h2>Phone numbers:</h2>
-        </div>
+        
       </div>
     </div>
   </section>
