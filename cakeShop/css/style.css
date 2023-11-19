@@ -5300,3 +5300,26 @@ color:#ef7c00 !important;
 	margin-bottom: 50px;
 }
 
+.abbspic{
+	width: 100%; /* Adjust the width as needed */
+  	max-width: 300px; /* Set a maximum width for the images */
+  	height: auto;
+	padding-left: 30px;
+
+}
+
+.textabbs{
+	margin-top: 100px;
+	max-width: 600px;
+}
+
+.hfabbs{
+	font-size: 17px;
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+
+.smab{
+	padding-left: 6px;
+	font-weight: 400;
+}
