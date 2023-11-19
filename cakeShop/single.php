@@ -75,6 +75,13 @@ if(isset($_GET['id']) & !empty($_GET['id'])){
                 						<label for="pickup-date">Pick-up Date:</label>
                 						<input type="date" id="pickup-date" name="pickup_date">
             						</div>
+
+                                    <div class="form-group">
+                						<label for="Note">Note:</label>
+                						<input type="text" id="Note" name="Note" placeholder="Detail more about your cake Ex.Happy birthday Ashan">
+            						</div>
+
+
         						</div>
 
 								<div class="product-quantity">
