@@ -45,7 +45,6 @@ exit;
 		<div class="content-blog">
 					<div class="page_header text-center">
 						<h2>Shop - Profile</h2>
-						<p>Get the best kit for smooth shave</p>
 					</div>
 <form method="post">
 <div class="container">

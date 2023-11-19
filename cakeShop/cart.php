@@ -13,8 +13,7 @@ $cart = $_SESSION['cart'];
 			<div class="container">
 				<div class="row">
 					<div class="page_header text-center">
-						<h2>Shop Cart</h2>
-						<p>Get the best kit for smooth shave</p>
+						<h2>Shop Basket</h2>
 					</div>
 					<div class="col-md-12">
 
@@ -35,7 +34,7 @@ $cart = $_SESSION['cart'];
 				$total = 0;
 					foreach ($cart as $key => $value) {
 						//echo $key . " : " . $value['quantity'] ."<br>";
-						$cartsql = "SELECT * FROM products WHERE id=$key";
+						$cartsql = "SELECT * FROM product WHERE id=$key";
 						$cartres = mysqli_query($connection, $cartsql);
 						$cartr = mysqli_fetch_assoc($cartres);
 
@@ -85,11 +84,11 @@ $cart = $_SESSION['cart'];
 
 			<div class="cart_totals">
 				<div class="col-md-6 push-md-6 no-padding">
-					<h4 class="heading">Cart Totals</h4>
+					<h4 class="heading">Basket Totals</h4>
 					<table class="table table-bordered col-md-6">
 						<tbody>
 							<tr>
-								<th>Cart Subtotal</th>
+								<th>Basket Subtotal</th>
 								<td><span class="amount">$ <?php echo $total; ?></span></td>
 							</tr>
 						</tbody>

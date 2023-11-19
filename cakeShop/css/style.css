@@ -2179,7 +2179,7 @@ right: 0;
 .button.btn-bdr.color {
 	border-color:#EF9595;
 	background:transparent;
-	color:#ef7c00;
+	color:#ffffff;
 }
 
 .button.lite {
@@ -2895,11 +2895,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 }
 
 .cart-btn a:first-child {
-	background: #333333;
+	background: #EF9595;
 }
 
 .cart-btn a:hover {
-	background: #EF9595;
+	background: #A1C298;
 	color: #fff;
 }
 
@@ -5326,4 +5326,9 @@ color:#ef7c00 !important;
 
 .cthalf{
 	padding-bottom: 30px;
+}
+
+.byegg {
+	text-align: center;
+	margin-top: 10px;
 }

@@ -6,7 +6,7 @@ include 'inc/header.php';
 include 'inc/nav.php'; 
 if(isset($_GET['id']) & !empty($_GET['id'])){
     $id = $_GET['id'];
-    $prodsql = "SELECT * FROM products WHERE id=$id";
+    $prodsql = "SELECT * FROM product WHERE id=$id";
     $prodres = mysqli_query($connection, $prodsql);
     $prodr = mysqli_fetch_assoc($prodres);
 }else{
@@ -56,7 +56,7 @@ if(isset($_GET['id']) & !empty($_GET['id'])){
                             <h2 class="product-single-title no-margin"><?php echo $prodr['name']; ?></h2>
                             <div class="space10"></div>
                             <p class="dd23"><?php echo $prodr['description']; ?></p>
-							<div class="p-price">$ <?php echo $prodr['price']; ?>/$ <?php echo $prodr['unit']; ?></div>
+							<div class="p-price"> <?php echo $prodr['price']; ?> <?php echo $prodr['unit']; ?></div>
                             <form method="get" action="addtocart.php">
 
 
@@ -106,7 +106,7 @@ if(isset($_GET['id']) & !empty($_GET['id'])){
                         <div class="row">
                             <div id="shop-mason" class="shop-mason-3col">
                                 <?php
-                                    $relsql = "SELECT * FROM products WHERE id != $id ORDER BY rand() LIMIT 3";
+                                    $relsql = "SELECT * FROM product WHERE id != $id ORDER BY rand() LIMIT 3";
                                     $relres = mysqli_query($connection, $relsql);
                                     while($relr = mysqli_fetch_assoc($relres)){
                                 ?>

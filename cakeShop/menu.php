@@ -43,7 +43,7 @@ include 'inc/header.php'; ?>
             								</div>
         								</div>
         									<h2 class="product-title"><a href="single.php?id=<?php echo $r['id']; ?>"><?php echo $r['name']; ?></a></h2>
-        								<div class="product-price">$ <?php echo $r['price']; ?><span></span></div>
+        								<div class="product-price"> <?php echo $r['price']; ?> <?php echo $r['unit']; ?><span></span></div>
     								</div>
 								</div>
 

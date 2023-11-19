@@ -59,7 +59,7 @@
 								$total = 0;
 								foreach ($cart as $key => $value) {
 									//echo $key . " : " . $value['quantity'] ."<br>";
-									$navcartsql = "SELECT * FROM products WHERE id=$key";
+									$navcartsql = "SELECT * FROM product WHERE id=$key";
 									$navcartres = mysqli_query($connection, $navcartsql);
 									$navcartr = mysqli_fetch_assoc($navcartres);
 

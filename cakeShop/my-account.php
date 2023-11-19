@@ -108,6 +108,7 @@ $cart = $_SESSION['cart'];
 				</div>
 
 				<div class="col-md-6">
+					
 
 				</div>
 			</div>
@@ -119,6 +120,10 @@ $cart = $_SESSION['cart'];
 					</div>
 				</div>
 			</div>
+			<div class="byegg">
+				<a href="logout.php">Logout</a>
+			</div>
+			
 		</div>
 	</section>
 	

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 19, 2023 at 08:58 AM
+-- Generation Time: Nov 19, 2023 at 04:15 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -35,6 +35,13 @@ CREATE TABLE `admin` (
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `firstname`, `lastname`, `email`, `password`) VALUES
+(1, 'gg', 'gg', 'admin@email.com', '123');
+
 -- --------------------------------------------------------
 
 --
@@ -59,6 +66,14 @@ CREATE TABLE `category` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `name`) VALUES
+(1, 'Cake'),
+(2, 'Donut');
 
 -- --------------------------------------------------------
 
@@ -121,6 +136,13 @@ CREATE TABLE `product` (
   `unit` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`id`, `name`, `categoryID`, `price`, `thumb`, `description`, `unit`) VALUES
+(1, 'Strawberry Cake', 1, '350', 'uploads/starw.jpg', 'Ummm... A tasty strawberry cake!\r\nYummy yummy yum yum.\r\nRecommended!!', 'Baht');
+
 -- --------------------------------------------------------
 
 --
@@ -138,7 +160,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`) VALUES
-(4, 'ch.chawakorn@gmail.com', '123');
+(6, 'meowithyok@gmail.com', 'meow123'),
+(8, 'admin@email.com', '$2y$10$4JhE5ZnO/tcR2EfiUnEjUuk.2NrKC1LjzsOvmmMcyTVljK4jSQvue');
 
 -- --------------------------------------------------------
 
@@ -164,7 +187,8 @@ CREATE TABLE `usersmeta` (
 --
 
 INSERT INTO `usersmeta` (`uid`, `firstname`, `lastname`, `address1`, `address2`, `city`, `state`, `country`, `postcode`, `phoneNO`) VALUES
-(4, 'i', 'l', 'p', 't', 'e', 'd', 'AM', '888', '999');
+(6, '', '', '', '', '', '', '', '', ''),
+(8, '', '', '', '', '', '', '', '', '');
 
 --
 -- Indexes for dumped tables
@@ -240,7 +264,7 @@ ALTER TABLE `usersmeta`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `cart`
@@ -252,7 +276,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -276,19 +300,19 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `usersmeta`
 --
 ALTER TABLE `usersmeta`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables

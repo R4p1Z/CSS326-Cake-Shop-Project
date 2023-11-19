@@ -39,7 +39,6 @@ $r = mysqli_fetch_assoc($res);
 		<div class="content-blog">
 					<div class="page_header text-center">
 						<h2>Shop - Checkout</h2>
-						<p>Get the best kit for smooth shave</p>
 					</div>
 <form method="post">
 <div class="container">
