@@ -19,10 +19,10 @@ include 'inc/header.php'; ?>
 							<div id="shop-mason" class="shop-mason-3col">
 
 							<?php 
-								$sql = "SELECT * FROM products";
+								$sql = "SELECT * FROM product";
 								if(isset($_GET['id']) & !empty($_GET['id'])){
 									$id = $_GET['id'];
-									$sql .= " WHERE catid=$id";
+									$sql .= " WHERE categoryID=$id";
 								}
 								
 

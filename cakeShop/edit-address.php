@@ -14,16 +14,14 @@ if(isset($_POST) & !empty($_POST)){
 		$country = filter_var($_POST['country'], FILTER_SANITIZE_STRING);
 		$fname = filter_var($_POST['fname'], FILTER_SANITIZE_STRING);
 		$lname = filter_var($_POST['lname'], FILTER_SANITIZE_STRING);
-		$company = filter_var($_POST['company'], FILTER_SANITIZE_STRING);
 		$address1 = filter_var($_POST['address1'], FILTER_SANITIZE_STRING);
 		$address2 = filter_var($_POST['address2'], FILTER_SANITIZE_STRING);
 		$city = filter_var($_POST['city'], FILTER_SANITIZE_STRING);
 		$state = filter_var($_POST['state'], FILTER_SANITIZE_STRING);
-		$phone = filter_var($_POST['phone'], FILTER_SANITIZE_NUMBER_INT);
-		
-		$zip = filter_var($_POST['zipcode'], FILTER_SANITIZE_NUMBER_INT);
+		$phoneNO = filter_var($_POST['phoneNO'], FILTER_SANITIZE_NUMBER_INT);
+		$postcode = filter_var($_POST['postcode'], FILTER_SANITIZE_NUMBER_INT);
 
-			$usql = "UPDATE usersmeta SET country='$country', firstname='$fname', lastname='$lname', address1='$address1', address2='$address2', city='$city', state='$state',  zip='$zip', company='$company', mobile='$phone' WHERE uid=$uid";
+			$usql = "UPDATE usersmeta SET country='$country', firstname='$fname', lastname='$lname', address1='$address1', address2='$address2', city='$city', state='$state', postcode='$postcode', phoneNO='$phoneNO' WHERE uid=$uid";
 			$ures = mysqli_query($connection, $usql) or die(mysqli_error($connection));
 			if($ures){
 
@@ -86,9 +84,6 @@ $r = mysqli_fetch_assoc($res);
 								</div>
 							</div>
 							<div class="clearfix space20"></div>
-							<label>Company Name</label>
-							<input name="company" class="form-control" placeholder="" value="<?php if(!empty($r['company'])){ echo $r['company']; }elseif(isset($company)){ echo $company; } ?>" type="text">
-							<div class="clearfix space20"></div>
 							<label>Address </label>
 							<input name="address1" class="form-control" placeholder="Street address" value="<?php if(!empty($r['address1'])){ echo $r['address1']; } elseif(isset($address1)){ echo $address1; } ?>" type="text">
 							<div class="clearfix space20"></div>
@@ -105,12 +100,12 @@ $r = mysqli_fetch_assoc($res);
 								</div>
 								<div class="col-md-4">
 									<label>Postcode </label>
-									<input name="zipcode" class="form-control" placeholder="Postcode / Zip" value="<?php if(!empty($r['zip'])){ echo $r['zip']; }elseif(isset($zip)){ echo $zip; } ?>" type="text">
+									<input name="postcode" class="form-control" placeholder="Postcode / Zip" value="<?php if(!empty($r['postcode'])){ echo $r['postcode']; }elseif(isset($postcode)){ echo $postcode; } ?>" type="text">
 								</div>
 							</div>
 							<div class="clearfix space20"></div>
 							<label>Phone </label>
-							<input name="phone" class="form-control" id="billing_phone" placeholder="" value="<?php if(!empty($r['mobile'])){ echo $r['mobile']; }elseif(isset($phone)){ echo $phone; } ?>" type="text">
+							<input name="phoneNO" class="form-control" id="billing_phone" placeholder="" value="<?php if(!empty($r['phoneNO'])){ echo $r['phoneNO']; }elseif(isset($phoneNO)){ echo $phoneNO; } ?>" type="text">
 						<div class="space30"></div>
 					<input type="submit" class="button btn-lg" value="Update Address">
 					</div>

@@ -17,7 +17,7 @@ if(isset($_POST) & !empty($_POST)){
 			$cansql = "INSERT INTO ordertracking (orderid, status, message) VALUES ('$id', 'Cancelled', '$cancel')";
 			$canres = mysqli_query($connection, $cansql) or die(mysqli_error($connection));
 			if($canres){
-				$ordupd = "UPDATE orders SET orderstatus='Cancelled' WHERE id=$id";
+				$ordupd = "UPDATE orders SET odstatus='Cancelled' WHERE id=$id";
 				if(mysqli_query($connection, $ordupd)){
 					header('location: my-account.php');
 				}
@@ -48,10 +48,12 @@ $r = mysqli_fetch_assoc($res);
 				<thead>
 					<tr>
 						<th>Order</th>
-						<th>Date</th>
+						<th>Order Date</th>
+						<th>Pick up time</th>
+						<th>Pick up date</th>
+						<th>Price</th>
 						<th>Status</th>
-						<th>Payment Mode</th>
-						<th>Total</th>
+						<th>Note</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -62,25 +64,33 @@ $r = mysqli_fetch_assoc($res);
 					}else{
 						header('location: my-account.php');
 					}
-					$ordsql = "SELECT * FROM orders WHERE id='$oid'";
+					$ordsql = "SELECT * FROM orders WHERE uid='$uid'";
 					$ordres = mysqli_query($connection, $ordsql);
-					while($ordr = mysqli_fetch_assoc($ordres)){
+					$pricesql = "SELECT * FROM payment WHERE uid='$uid'";
+					$priceres = mysqli_query($connection, $pricesql);
+					while($ordr = mysqli_fetch_assoc($ordres) && $price = mysqli_fetch_assoc($priceres)){
 				?>
 					<tr>
 						<td>
 							<?php echo $ordr['id']; ?>
 						</td>
 						<td>
-							<?php echo $ordr['timestamp']; ?>
+							<?php echo $ordr['orderDate']; ?>
 						</td>
 						<td>
-							<?php echo $ordr['orderstatus']; ?>			
+							<?php echo $ordr['pickUp-time']; ?>			
 						</td>
 						<td>
-							<?php echo $ordr['paymentmode']; ?>
+							<?php echo $ordr['pickUp-date']; ?>
 						</td>
 						<td>
-							$ <?php echo $ordr['totalprice']; ?>
+							<?php echo $price['totalPrice']; ?>
+						</td>
+						<td>
+							<?php echo $ordr['status']; ?>
+						</td>
+						<td>
+							<?php echo $ordr['note']; ?>
 						</td>
 					</tr>
 				<?php } ?>

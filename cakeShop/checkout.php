@@ -18,23 +18,20 @@ if(isset($_POST) & !empty($_POST)){
 		$country = filter_var($_POST['country'], FILTER_SANITIZE_STRING);
 		$fname = filter_var($_POST['fname'], FILTER_SANITIZE_STRING);
 		$lname = filter_var($_POST['lname'], FILTER_SANITIZE_STRING);
-		$company = filter_var($_POST['company'], FILTER_SANITIZE_STRING);
 		$address1 = filter_var($_POST['address1'], FILTER_SANITIZE_STRING);
 		$address2 = filter_var($_POST['address2'], FILTER_SANITIZE_STRING);
 		$city = filter_var($_POST['city'], FILTER_SANITIZE_STRING);
 		$state = filter_var($_POST['state'], FILTER_SANITIZE_STRING);
 		$phone = filter_var($_POST['phone'], FILTER_SANITIZE_NUMBER_INT);
 		$payment = filter_var($_POST['payment'], FILTER_SANITIZE_STRING);
-		$shipping = filter_var($_POST['shipping'], FILTER_SANITIZE_STRING);
 		$zip = filter_var($_POST['zipcode'], FILTER_SANITIZE_NUMBER_INT);
-        $fbalance= $_POST['fbalance'];
 		$sql = "SELECT * FROM usersmeta WHERE uid=$uid";
 		$res = mysqli_query($connection, $sql);
 		$r = mysqli_fetch_assoc($res);
 		$count = mysqli_num_rows($res);
 		if($count == 1){
 			//update data in usersmeta table
-			$usql = "UPDATE usersmeta SET balance='$fbalance' WHERE uid=$uid";
+			$usql = "SELECT * FROM usersmeta WHERE uid=$uid";
 			$ures = mysqli_query($connection, $usql) or die(mysqli_error($connection));
 			if($ures){
 
@@ -45,10 +42,10 @@ if(isset($_POST) & !empty($_POST)){
 					$ordres = mysqli_query($connection, $ordsql);
 					$ordr = mysqli_fetch_assoc($ordres);
 
-					$total = $total + ($ordr['price']*$value['quantity']) + $shippingcost;
+					$total = $total + ($ordr['price']*$value['quantity']);
 				}
 
-				echo $iosql = "INSERT INTO orders (uid, totalprice, orderstatus, shipping, paymentmode) VALUES ('$uid', '$total', 'Order Placed','$shipping', '$payment')";
+				echo $iosql = "INSERT INTO orders (uid, orderDate, pickUp-time, pickUp-date, odstatus) VALUES ('$uid', '$total', 'Order Placed','$shipping', '$payment')";
 				$iores = mysqli_query($connection, $iosql) or die(mysqli_error($connection));
 				if($iores){
 					//echo "Order inserted, insert order items <br>";

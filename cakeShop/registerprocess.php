@@ -5,7 +5,7 @@ if(isset($_POST) & !empty($_POST)){
 
 	//$email = mysqli_real_escape_string($connection, $_POST['email']);
 	$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-	$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+	$password = $_POST['password'];
 	//$sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
 	$sql = "INSERT INTO users (email, password) VALUES ('$email', '$password')";
 	$result = mysqli_query($connection, $sql) or die(mysqli_error($connection));

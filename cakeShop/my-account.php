@@ -28,12 +28,12 @@ $cart = $_SESSION['cart'];
 				<thead>
 					<tr>
 						<th>Order</th>
-						<th>Date</th>
+						<th>Order Date</th>
+						<th>Pick up time</th>
+						<th>Pick up date</th>
+						<th>Price</th>
 						<th>Status</th>
-						<th>Payment Mode</th>
-						<th>Shipping Option</th>
-						<th>Total</th>
-						<th></th>
+						<th>Note</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -41,31 +41,36 @@ $cart = $_SESSION['cart'];
 				<?php
 					$ordsql = "SELECT * FROM orders WHERE uid='$uid'";
 					$ordres = mysqli_query($connection, $ordsql);
-					while($ordr = mysqli_fetch_assoc($ordres)){
+					$pricesql = "SELECT * FROM payment WHERE uid='$uid'";
+					$priceres = mysqli_query($connection, $pricesql);
+					while($ordr = mysqli_fetch_assoc($ordres) && $price = mysqli_fetch_assoc($priceres)){
 				?>
 					<tr>
 						<td>
 							<?php echo $ordr['id']; ?>
 						</td>
 						<td>
-							<?php echo $ordr['timestamp']; ?>
+							<?php echo $ordr['orderDate']; ?>
 						</td>
 						<td>
-							<?php echo $ordr['orderstatus']; ?>			
+							<?php echo $ordr['pickUp-time']; ?>			
 						</td>
 						<td>
-							<?php echo $ordr['paymentmode']; ?>
+							<?php echo $ordr['pickUp-date']; ?>
 						</td>
 						<td>
-							<?php echo $ordr['shipping']; ?>
+							<?php echo $price['totalPrice']; ?>
 						</td>
 						<td>
-							$ <?php echo number_format($ordr['totalprice'],2); ?>
+							<?php echo $ordr['status']; ?>
 						</td>
 						<td>
-							<a href="view-order.php?id=<?php echo $ordr['id']; ?>">View</a>
-							<?php if($ordr['orderstatus'] != 'Cancelled'){?>
-							| <a href="cancel-order.php?id=<?php echo $ordr['id']; ?>">Cancel</a>
+							<?php echo $ordr['note']; ?>
+						</td>
+						<td>
+							<a href="view-order.php?id=<?php echo $ordr['id']; ?>">View</a> <!--Don't use this part now -->
+							<?php if($ordr['status'] != 'Cancelled'){?>
+							| <a href="cancel-order.php?id=<?php echo $ordr['id']; ?>">Cancel</a> <!--Don't forget to edit this part -->
 							<?php } ?>
 						</td>
 					</tr>
@@ -85,7 +90,7 @@ $cart = $_SESSION['cart'];
 				<div class="col-md-6">
 								<h4>My Address <a href="edit-address.php">Edit</a></h4>
 					<?php
-						$csql = "SELECT u1.firstname, u1.lastname, u1.address1, u1.address2, u1.city, u1.state, u1.country, u1.company, u.email, u1.mobile, u1.zip, u1.balance FROM users u JOIN usersmeta u1 WHERE u.id=u1.uid AND u.id=$uid";
+						$csql = "SELECT u1.firstname, u1.lastname, u1.address1, u1.address2, u1.city, u1.state, u1.country, u.email, u1.phoneNO, u1.postcode FROM users u JOIN usersmeta u1 WHERE u.id=u1.uid AND u.id=$uid";
 						$cres = mysqli_query($connection, $csql);
 						if(mysqli_num_rows($cres) == 1){
 							$cr = mysqli_fetch_assoc($cres);
@@ -95,11 +100,9 @@ $cart = $_SESSION['cart'];
 							echo "<p>".$cr['city'] ."</p>";
 							echo "<p>".$cr['state'] ."</p>";
 							echo "<p>".$cr['country'] ."</p>";
-							echo "<p>".$cr['company'] ."</p>";
-							echo "<p>".$cr['zip'] ."</p>";
-							echo "<p>".$cr['mobile'] ."</p>";
+							echo "<p>".$cr['postcode'] ."</p>";
+							echo "<p>".$cr['phoneNO'] ."</p>";
 							echo "<p>".$cr['email'] ."</p>";
-							echo "<h4>Balance $ ".$cr['balance'] ."</h4>";
 						}
 					?>
 				</div>

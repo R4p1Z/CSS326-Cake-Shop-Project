@@ -56,19 +56,15 @@ if(isset($_GET['id']) & !empty($_GET['id'])){
                             <h2 class="product-single-title no-margin"><?php echo $prodr['name']; ?></h2>
                             <div class="space10"></div>
                             <p class="dd23"><?php echo $prodr['description']; ?></p>
-							<div class="p-price">$ <?php echo $prodr['price']; ?>/<?php echo $prodr['unit']; ?></div>
+							<div class="p-price">$ <?php echo $prodr['price']; ?>/$ <?php echo $prodr['unit']; ?></div>
                             <form method="get" action="addtocart.php">
 
 
 								<div class="additional-fields">
             						<div class="form-group">
 										<label>Size:</label><br>
-                						<input type="radio" id="small" name="size" value="small">
-                						<label for="small">Small</label><br>
                 						<input type="radio" id="medium" name="size" value="medium">
                 						<label for="medium">Medium</label><br>
-                						<input type="radio" id="large" name="size" value="large">
-                						<label for="large">Large</label><br>
 									</div>
 
             						<div class="form-group">
