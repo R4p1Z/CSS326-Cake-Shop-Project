@@ -21,7 +21,7 @@
 
 					<div class="mu-text">
 						<li>
-							<a href="#">About us</a>						
+							<a href="aboutus.php">About us</a>						
 						</li>
 					</div>
 
@@ -37,7 +37,9 @@
 					<?php $cart = $_SESSION['cart']; ?>
 						<div class="s-acc">
 							<div class="acc-ico">
-								<i class="fa fa-user"></i>
+								<a href="my-account.php">
+									<i class="fa fa-user"></i>
+								</a>
 							</div>
 
 						</div>
@@ -53,7 +55,7 @@
 							<br>
 							<br>
 							<?php
-				//print_r($cart);
+				
 								$total = 0;
 								foreach ($cart as $key => $value) {
 									//echo $key . " : " . $value['quantity'] ."<br>";
