@@ -25,6 +25,35 @@ include 'inc/header.php'; ?>
 						<img class="pic4home" src="pic/h20.jpg">
 					</div>
 
+					<div class="catalog-haul">
+						<div class="col-md-3">
+        					<div class="catalog-column">
+          						<h1>Collection</h1>
+          						<img src="pic/browniebear.jpg" alt="Photo 1">
+        					</div>
+      					</div>
+      					<div class="col-md-3">
+        					<div class="catalog-column">
+          						<img src="pic/starw.jpg" alt="Photo 2">
+          						<img src="pic/lilchick.jpg" alt="Photo 3">
+        					</div>
+      					</div>
+      					<div class="col-md-3">
+        					<div class="catalog-column">
+          						<img src="pic/whitebear.jpg" alt="Photo 4">
+          						<img src="pic/partyblue.jpg" alt="Photo 5">
+        					</div>
+      					</div>
+      					<div class="col-md-3">
+       					 	<div class="catalog-column">
+         						<img src="pic/bearcowboy.jpg" alt="Photo 6">
+          						<img src="pic/partyyellow.jpg" alt="Photo 7">
+        					</div>
+      					</div>
+
+					</div>
+
+
 					
 						
 					<div class="clearfix"></div>					
