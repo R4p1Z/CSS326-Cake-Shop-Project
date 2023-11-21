@@ -8,48 +8,8 @@
 <?php include 'inc/header.php'; ?>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-      google.charts.setOnLoadCallback(drawChart1);
-
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses'],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540]
-        ]);
-
-        var options = {
-          title: 'Weekly Revenue',
-          curveType: 'function',
-          legend: { position: 'bottom' }
-        };
-
-        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-        chart.draw(data, options);
-      }
-      function drawChart1() {
-        var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses'],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540]
-        ]);
-
-        var options = {
-          title: 'Weekly Orders',
-          curveType: 'function',
-          legend: { position: 'bottom' }
-        };
-
-        var chart = new google.visualization.LineChart(document.getElementById('curve_chart1'));
-
-        chart.draw(data, options);
-      }
+      
+      
     </script>
 <?php include 'inc/nav.php'; ?>
 	
@@ -59,7 +19,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="page_header text-center">
-						<h2>Dashboard</h2>
+						<h2>HPY Admin</h2>
 						<!-- <p>You can order products from here</p> -->
 					</div>
 					<div class="col-md-6">
