@@ -22,7 +22,7 @@ include 'inc/nav.php'; ?>
 						<div class="clearfix space40"></div>
 						<?php if(isset($_GET['message'])){
 								if($_GET['message'] == 1){
-						 ?><div class="alert alert-danger" role="alert"> <?php echo "Invalid Login Credentials"; ?> </div>
+						 ?><div class="alert alert-danger" role="alert"> <?php echo "Please try again"; ?> </div>
 
 						 <?php } }?>
 						<form class="logregform" method="post" action="loginprocess.php">
