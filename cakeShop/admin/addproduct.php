@@ -26,13 +26,13 @@
 					$location = "uploads/";
 					if(move_uploaded_file($tmp_name, $location.$name)){
 						//$smsg = "Uploaded Successfully";
-						$sql = "INSERT INTO products (name, description, catid, price, thumb) VALUES ('$prodname', '$description', '$category', '$price', '$location$name')";
+						$sql = "INSERT INTO product (name,categoryID,price,thumb,description) VALUES ('$prodname','$category', '$price', '$location$name','$description')";
 						$res = mysqli_query($connection, $sql);
 						if($res){
 							//echo "Product Created";
 							header('location: products.php');
 						}else{
-							$fmsg = "Failed to Create Product";
+							$fmsg = "Failed to Create Producttttttttttttt";
 						}
 					}else{
 						$fmsg = "Failed to Upload File";

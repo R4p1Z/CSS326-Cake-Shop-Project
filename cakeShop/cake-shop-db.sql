@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 19, 2023 at 04:15 PM
+-- Generation Time: Nov 21, 2023 at 01:20 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -40,7 +40,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `firstname`, `lastname`, `email`, `password`) VALUES
-(1, 'gg', 'gg', 'admin@email.com', '123');
+(3, 'G', 'G', 'admin@gmail.com', '202cb962ac59075b964b07152d234b70');
 
 -- --------------------------------------------------------
 
@@ -160,7 +160,6 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`) VALUES
-(6, 'meowithyok@gmail.com', 'meow123'),
 (8, 'admin@email.com', '$2y$10$4JhE5ZnO/tcR2EfiUnEjUuk.2NrKC1LjzsOvmmMcyTVljK4jSQvue');
 
 -- --------------------------------------------------------
@@ -187,7 +186,6 @@ CREATE TABLE `usersmeta` (
 --
 
 INSERT INTO `usersmeta` (`uid`, `firstname`, `lastname`, `address1`, `address2`, `city`, `state`, `country`, `postcode`, `phoneNO`) VALUES
-(6, '', '', '', '', '', '', '', '', ''),
 (8, '', '', '', '', '', '', '', '', '');
 
 --
@@ -264,7 +262,7 @@ ALTER TABLE `usersmeta`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `cart`
