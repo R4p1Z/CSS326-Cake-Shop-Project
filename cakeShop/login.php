@@ -12,7 +12,6 @@ include 'inc/nav.php'; ?>
 				<div class="row">
 					<div class="page_header text-center">
 						<h2>Shop - Account</h2>
-						<p>Tagline Here</p>
 					</div>
 					<div class="col-md-12">
 				<div class="row shop-login">
@@ -22,7 +21,7 @@ include 'inc/nav.php'; ?>
 						<div class="clearfix space40"></div>
 						<?php if(isset($_GET['message'])){
 								if($_GET['message'] == 1){
-						 ?><div class="alert alert-danger" role="alert"> <?php echo "Invalid Login Credentials"; ?> </div>
+						 ?><div class="alert alert-danger" role="alert"> <?php echo "Please try again"; ?> </div>
 
 						 <?php } }?>
 						<form class="logregform" method="post" action="loginprocess.php">

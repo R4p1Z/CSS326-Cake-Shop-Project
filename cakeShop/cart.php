@@ -97,6 +97,9 @@ $cart = $_SESSION['cart'];
 						</tbody>
 					</table>
 				</div>
+			</div>
+			<div class="gogobuymorepls">
+				<a href="menu.php"><<--Buy more cake</a>
 			</div>			
 							
 					</div>

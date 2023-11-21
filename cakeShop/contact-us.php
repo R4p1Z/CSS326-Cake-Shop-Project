@@ -32,6 +32,11 @@ include 'inc/header.php'; ?>
                     <h2 class="cthalf">Phone numbers:</h2>
                 </div>
             </div>
+            <div class="tobect">
+              <img class="pic4home" src="pic/anotherone.jpg" class="img-responsive">
+            </div>
+
+
         </div>
 
         

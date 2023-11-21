@@ -32,6 +32,11 @@ include 'inc/header.php';
                         <p class="smab">Thank you for choosing HPY cake for your cake needs. We look forward to serving you and being a part of your celebrations.</p>
                     </div>
                 </div>
+
+
+                <div>
+                    
+                </div>
             </div>
         </div>
     </div>
