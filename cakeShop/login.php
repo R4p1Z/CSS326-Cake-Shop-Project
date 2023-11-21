@@ -12,7 +12,6 @@ include 'inc/nav.php'; ?>
 				<div class="row">
 					<div class="page_header text-center">
 						<h2>Shop - Account</h2>
-						<p>Tagline Here</p>
 					</div>
 					<div class="col-md-12">
 				<div class="row shop-login">
