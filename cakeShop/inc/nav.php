@@ -35,14 +35,20 @@
 	
 
 					<?php $cart = $_SESSION['cart']; ?>
-						<div class="s-acc">
-							<div class="acc-ico">
-								<a href="my-account.php">
-									<i class="fa fa-user"></i>
-								</a>
-							</div>
+					<div class="s-acc">
+    					<div class="acc-ico">
+        					<i class="fa fa-user" id="accountIcon"></i>
+    					</div>
+					</div>
 
-						</div>
+					<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+						<script>
+    						$(document).ready(function() {
+        						$('#accountIcon').on('click', function() {
+            						window.location.href = 'my-account.php';
+        						});
+    						});
+						</script>
 	
 					<div class="s-cart">
 						<div class="sc-ico"><i class="fa fa-shopping-cart"></i><em><?php
