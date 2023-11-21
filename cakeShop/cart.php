@@ -40,6 +40,9 @@ $cart = $_SESSION['cart'];
 						$cartsql = "SELECT * FROM product WHERE id=$key";
 						$cartres = mysqli_query($connection, $cartsql);
 						$cartr = mysqli_fetch_assoc($cartres);
+						$cartnote = "SELECT * FROM cart WHERE id=$key";
+						$cartnoteres = mysqli_query($connection, $cartnote);
+						$cartnoter = mysqli_fetch_assoc($cartnoteres);
 
 					
 				 ?>
@@ -54,36 +57,31 @@ $cart = $_SESSION['cart'];
 							<a href="single.php?id=<?php echo $cartr['id']; ?>"><?php echo substr($cartr['name'], 0 , 30); ?></a>					
 						</td>
 						<td>
-							<span class="amount">$<?php echo $cartr['price']; ?></span>					
+							<span class="amount"><?php echo $cartr['price']; ?></span>					
 						</td>
 						<td>
 							<div class="quantity"><?php echo $value['quantity']; ?></div>
 						</td>
 						<td>
-							<span class="amount">$<?php echo ($cartr['price']*$value['quantity']); ?></span>					
+							<span class="note"><?php echo $cartnoter['note']; ?></span>
+						</td>
+						<td>
+							<span class="amount"><?php echo ($cartr['price']*$value['quantity']); ?></span>					
 						</td>
 					</tr>
 				<?php 
 					$total = $total + ($cartr['price']*$value['quantity']);
 				} ?>
-					<tr>
-						<td colspan="6" class="actions">
-							<div class="col-md-6">
-							<!--	<div class="coupon">
-									<label>Coupon:</label><br>
-									<input placeholder="Coupon code" type="text"> <button type="submit">Apply</button>
-								</div> -->
-							</div>
-							<div class="col-md-6">
-								<div class="cart-btn">
-									<!-- <button class="button btn-md" type="submit">Update Cart</button> -->
-									<a href="checkout.php" class="button btn-md" >Checkout</a>
-								</div>
-							</div>
-						</td>
-					</tr>
+					
 				</tbody>
-			</table>		
+			</table>
+			
+			<div class="checkmate">
+				<div class="cart-btn">
+									<!-- <button class="button btn-md" type="submit">Update Cart</button> -->
+					<a href="checkout.php" class="button btn-md" >Checkout</a>
+				</div>
+			</div>
 
 			<div class="cart_totals">
 				<div class="col-md-6 push-md-6 no-padding">

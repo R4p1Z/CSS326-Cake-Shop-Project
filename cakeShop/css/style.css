@@ -4081,6 +4081,7 @@ transform:translateY(-50%);
 	background:#EF9595;
 	padding: 50px 0 0px;
 	bottom: 0;
+	margin-top: auto;
 }
 
 
@@ -5348,4 +5349,8 @@ color:#ef7c00 !important;
 
 .tobect{
 	text-align: center;
+}
+
+.checkmate{
+	padding-left: 150px;
 }
