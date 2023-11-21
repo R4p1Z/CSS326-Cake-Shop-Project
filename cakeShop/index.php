@@ -10,7 +10,7 @@ include 'inc/header.php'; ?>
 			<div class="container">
 				<div class="row">
 					<div class="homefp">
-						<img class="pic4home" src="pic/cakehome.jpg">
+						<img class="pic4home" src="pic/cakehome.jpg" class="img-responsive">
 					</div>
 					<div class="homefp">
 						<a>COLLECTION</a>
@@ -22,7 +22,7 @@ include 'inc/header.php'; ?>
 						<p class="h2o">how to order our cake</p>
 					</div>
 					<div class="homefp">
-						<img class="pic4home" src="pic/h20.jpg">
+						<img class="pic4home" src="pic/h20.jpg" class="img-responsive">
 					</div>
 
 					<div class="catalog-haul">
