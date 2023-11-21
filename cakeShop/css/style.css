@@ -3382,6 +3382,7 @@ font-size:12px;
     width: 100%;
     position: relative;
 	z-index:888;
+	position: fixed;
 }
 
 
