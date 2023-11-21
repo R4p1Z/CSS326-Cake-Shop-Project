@@ -4,7 +4,7 @@ session_start();
 require_once 'config/connect.php';
 include 'inc/header.php'; 
 include 'inc/nav.php'; 
-if(isset($_GET['id']) & !empty($_GET['id'])){
+if (isset($_GET['id']) & !empty($_GET['id'])) {
     $id = $_GET['id'];
     $prodsql = "SELECT * FROM product WHERE id=$id";
     $prodres = mysqli_query($connection, $prodsql);
@@ -13,7 +13,7 @@ if(isset($_GET['id']) & !empty($_GET['id'])){
     header('location: index.php');
 }
 ?>
-    
+
 <!-- SHOP CONTENT -->
 <section id="content">
     <div class="content-blog">

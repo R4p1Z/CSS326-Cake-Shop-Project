@@ -4,6 +4,8 @@ require_once 'config/connect.php';
 include 'inc/header.php'; 
 include 'inc/nav.php'; 
 $cart = $_SESSION['cart'];
+
+
 ?>
 
 	
@@ -25,6 +27,7 @@ $cart = $_SESSION['cart'];
 						<th>Product</th>
 						<th>Price</th>
 						<th>Quantity</th>
+						<th>Note</th>
 						<th>Total</th>
 					</tr>
 				</thead>
