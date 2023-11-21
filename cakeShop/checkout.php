@@ -166,9 +166,14 @@ $r = mysqli_fetch_assoc($res);
 			</table>
 
 			<div class="gopay">
-					<input type="button" class="button btn-small" value="Payment">
-
+    			<input type="button" class="button btn-small" value="Payment" onclick="redirectToAnotherFile()">
 			</div>
+
+			<script>
+    			function redirectToAnotherFile() {
+        			window.location.href = "payment.php";
+    			}
+			</script>
 			
 			<div class="clearfix space30"></div>
 			</div>
