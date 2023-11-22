@@ -1,25 +1,46 @@
 <?php
 session_start();
-if(isset($_GET) & !empty($_GET)){
-	$id = $_GET['id'];
-	if(isset($_GET['quant']) & !empty($_GET['quant'])){ $quant = $_GET['quant']; }else{ $quant = 1;}
-	/*$size = $_GET['size'];
-	$pickup_time = $_GET['pickup_time'];
-	$pickup_date = $_GET['pickup_date'];
-	$note = $_GET['Note'];
-	$price = "SELECT price FROM product WHERE id = $id";
-	$priceres = mysqli_query($connection, $price);
-	$pricer = mysqli_fetch_assoc($priceres);
-	$product_price = $pricer['price'];
-	$insertCartSQL = "INSERT INTO cart (pid, amount, price, size, pickup_time, pickup_date, note) VALUES ('$id', '$quant', '$product_price', '$size', '$pickup_time', '$pickup_date', '$note')";
-	$insertCartSQLres = mysqli_query($connection, $insertCartSQL) or die(mysqli_error($connection));*/
-	$_SESSION['cart'][$id] = array("quantity" => $quant); 
-	header('location: cart.php');
 
-}else{
-	header('location: cart.php');
+if(isset($_GET) && !empty($_GET)){
+    $id = $_GET['id'];
+    $error_message = ''; // Initialize an empty error message
+
+    if(isset($_GET['quant']) && !empty($_GET['quant'])){
+        $quant = $_GET['quant'];
+    } else{
+        $error_message .= "Quantity is required. ";
+    }
+
+    if(isset($_GET['Note']) && !empty($_GET['Note'])){
+        $Note = $_GET['Note'];
+    } else{
+        $error_message .= "Note is required. ";
+    }
+
+    // Check if there are any error messages
+    if(empty($error_message)){
+        // Check if the item is already in the cart
+        if(isset($_SESSION['cart'][$id])){
+            // If yes, update both quantity and Note
+            $_SESSION['cart'][$id]['quantity'] += $quant;
+            $_SESSION['cart'][$id]['Note'] = $Note;
+        } else{
+            // If no, create a new entry
+            $_SESSION['cart'][$id] = array("quantity" => $quant, "Note" => $Note);
+        }
+
+        header('location: cart.php');
+        exit(); // Ensure that the script stops execution after the redirect
+    } else {
+        // Display error message and prevent redirect
+        echo "Error: $error_message";
+    }
+} else{
+    header('location: cart.php');
+    exit(); // Ensure that the script stops execution after the redirect
 }
+
 echo "<pre>";
 print_r($_SESSION['cart']);
 echo "</pre>";
-?> 
+?>

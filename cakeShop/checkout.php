@@ -9,6 +9,7 @@ include 'inc/header.php';
 include 'inc/nav.php'; 
 $uid = $_SESSION['customerid'];
 $cart = $_SESSION['cart'];
+
 $ship = $_POST['shipping'];
 $shippingcost = 0;
 if ($ship == "UPS") { $shippingcost = 5; $total = $total + $shippingcost;}
@@ -27,7 +28,8 @@ if(isset($_POST) & !empty($_POST)){
 		$zip = filter_var($_POST['zipcode'], FILTER_SANITIZE_NUMBER_INT);
 		$sql = "SELECT * FROM usersmeta WHERE uid=$uid";
 		$res = mysqli_query($connection, $sql);
-		$r = mysqli_fetch_assoc($res);
+		$r = mysqli_fetch_assoc($res); 
+
 		$count = mysqli_num_rows($res);
 		if($count == 1){
 			//update data in usersmeta table
@@ -143,7 +145,7 @@ $r = mysqli_fetch_assoc($res);
 				<tbody>
 					<tr>
 						<th>Cart Subtotal</th>
-						<td><span class="amount"><?php echo $total-$shippingcost; ?> Baht </span></td>
+						<td><span class="amount"><?php echo $total; ?> Baht </span></td>
 					</tr>
 					<tr>
 						<!-- <th>Shipping and Handling</th> 
@@ -165,9 +167,11 @@ $r = mysqli_fetch_assoc($res);
 				</tbody>
 			</table>
 
-			<div class="gopay">
-    			<input type="button" class="button btn-small" value="Payment" onclick="redirectToAnotherFile()">
-			</div>
+			<form action="addtoorder.php">
+				<div class="gopay">
+    				<input type="button" class="button btn-small" value="Payment" onclick="redirectToAnotherFile()">
+				</div>
+			</form>
 
 			<script>
     			function redirectToAnotherFile() {

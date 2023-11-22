@@ -40,10 +40,6 @@ $cart = $_SESSION['cart'];
 						$cartsql = "SELECT * FROM product WHERE id=$key";
 						$cartres = mysqli_query($connection, $cartsql);
 						$cartr = mysqli_fetch_assoc($cartres);
-						$cartnote = "SELECT * FROM cart WHERE id=$key";
-						$cartnoteres = mysqli_query($connection, $cartnote);
-						$cartnoter = mysqli_fetch_assoc($cartnoteres);
-
 					
 				 ?>
 					<tr>
@@ -63,7 +59,7 @@ $cart = $_SESSION['cart'];
 							<div class="quantity"><?php echo $value['quantity']; ?></div>
 						</td>
 						<td>
-							<span class="note"><?php echo $cartnoter['note']; ?></span>
+							<span class="note"><?php echo $value['Note']; ?></span>
 						</td>
 						<td>
 							<span class="amount"><?php echo ($cartr['price']*$value['quantity']); ?></span>					

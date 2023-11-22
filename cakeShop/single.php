@@ -12,31 +12,6 @@ if (isset($_GET['id']) & !empty($_GET['id'])) {
 }else{
     header('location: index.php');
 }
-
-// Check if the form is submitted
-if (isset($_GET['size'])) {
-    $size = $_GET['size'];
-    $pickup_time = $_GET['pickup_time'];
-    $pickup_date = $_GET['pickup_date'];
-    $note = $_GET['Note'];
-    $quant = $_GET['quant'];
-
-    // Validate and sanitize the inputs as needed
-
-    // Insert into the "cart" table
-    $insertCartSQL = "INSERT INTO cart (pid, size, pickup_time, pickup_date, note, amount, price) 
-                      VALUES ('$id', '$size', '$pickup_time', '$pickup_date', '$note', '$quant', '{$prodr['price']}')";
-
-    $insertCartSQLres = mysqli_query($connection, $insertCartSQL);
-
-    if ($insertCartSQLres) {
-        // Successfully added to cart
-        header("location: cart.php?message=1");
-    } else {
-        // Failed to add to cart
-        header("location: single.php?id=$id&message=2");
-    }
-}
 ?>
 
 <!-- SHOP CONTENT -->
